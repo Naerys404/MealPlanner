@@ -1,0 +1,41 @@
+<div class="preference">
+  <div class="generator">
+    <div class="sticker"></div>
+    <button type="button" class="handwrite thick" (click)="generate()">
+        Génère mon menu !
+    </button>
+  </div>
+    <div class="wrapper">
+        @for(category of categories; track category.name; let index = $index){
+        <div class="accordion" [class.active]="index === activeIndex" >
+          <div class="accordion_tab cat" [class.active]="index === activeIndex" >
+            <div class="type" (click)="toggleActive(index)">
+                <div class="icon">
+                    <fa-icon [icon]="getIconForCategory(category.name)"></fa-icon>
+                </div>
+                <p class="catName">{{category.name}}</p>
+              <div class="accordion_arrow" [class.active]="index === activeIndex">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
+            </div>
+          </div>
+          <div class="accordion_content">
+            <div class="accordion_item">
+                <ul id="{{category.name}}">
+                  <app-ingredient-form [category]="category.name"></app-ingredient-form>
+                    @for(ingredient of category.ingredients; track ingredient.name; let index = $index){
+                        
+                    <li class="ingredient" id="ingredient-{{ingredient.id}}">{{ingredient.name}}<button type="button" class="btn btn-sm" (click)="deleteIngredient(ingredient.id)">X</button></li> 
+                        
+                    }
+                </ul>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+    }
+  
+
+    
+</div>
+    

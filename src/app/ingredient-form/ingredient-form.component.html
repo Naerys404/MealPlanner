@@ -1,0 +1,4 @@
+<form [formGroup]="ingredientForm" (ngSubmit)="onSubmit(category)" class="form">
+    <input formControlName="name" placeholder="Nom de l'ingrédient" class="form-control" spellcheck=true required>
+    <button type="submit" class="btn">Ajouter</button>
+  </form>

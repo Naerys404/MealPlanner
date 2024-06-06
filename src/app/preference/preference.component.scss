@@ -1,0 +1,166 @@
+div.preference {
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 1em;
+    min-width:30vw;
+
+
+
+  .accordion {
+  width: 450px;
+  margin: 0 auto;
+  background-color: #fafafa;
+  border-radius: 4px;
+  box-shadow: 0 5px 15px rgba(114, 100, 83, 0.2);
+  overflow: hidden;
+  transition: all 0.3s ease-out; 
+  margin-bottom: 1em;
+  position: relative;
+  border-top-left-radius: 250px 15px !important;
+  border-bottom-left-radius: 20px 115px !important;
+  border-bottom-right-radius: 105px 15px !important;
+  
+}
+
+
+.accordion .accordion_tab {
+  padding: 20px;
+  user-select: none;
+  position: relative;
+  color: #2C323E;
+
+}
+
+.accordion .accordion_tab .accordion_arrow {
+  position: absolute;
+  top: 0;
+  right: 1.5rem;
+  width: 15px;
+  height: 15px;
+  transition: transform 0.4s ease-out; 
+  vertical-align: baseline;
+}
+
+.accordion .accordion_tab.active .accordion_arrow {
+  transform: rotate(180deg);
+  top: 0.8em;
+}
+
+
+.accordion.active:hover {
+  // box-shadow: 0 5px 15px rgba(#726453, 0.5);
+  box-shadow: 0 5px 15px rgba(114, 100, 83, 0.5); /* Couleur de l'ombre au survol ajustée */
+}
+
+.accordion .accordion_content {
+  max-height: 0;
+  transition: max-height 0.6s ease-in-out; 
+}
+
+.accordion .accordion_content .accordion_item {
+  margin-bottom: 20px;
+}
+
+.accordion .accordion_content .accordion_item p:last-child {
+  color: #9a9b9f;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.accordion.active .accordion_content {
+  max-height: 70vh;
+  transition: max-height 0.6s ease-in-out; 
+}
+
+
+    .col-rows {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    } 
+
+    .catName {
+        margin:0; 
+        font-size: large;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+
+        }
+    
+
+    .generator {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .handwrite {
+          font-size: 1.5em;
+          font-family: "Asap", sans-serif;
+          font-weight: 500;
+          margin: 1em auto 2em auto;
+          background:transparent;
+          padding:1rem 2rem;
+          transition:all .5s ease;
+          color:#41403E;
+          font-size:1.2rem;
+          letter-spacing:1px;
+          outline:none;
+          box-shadow: 20px 38px 34px -26px hsla(0,0%,0%,.3);
+          border-radius: 255px 15px 225px 15px/15px 225px 15px 255px; 
+          border-style: solid;
+          border-color: #568306;
+
+          &.thick {
+            border-width: 7px;
+          }
+
+          &.thin {
+            border-width: 1.5px;
+          }
+        
+           &:hover{
+            box-shadow:2px 8px 4px -6px hsla(0,0%,0%,.5);      
+          } 
+        
+
+    }
+
+    .type {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        font-size: large;
+        cursor: pointer;
+        position: relative;
+
+        .icon {
+            width:1em; height: 1em;
+            margin-right: 0.5em;
+            align-self: baseline;
+
+        }
+
+
+        .formAdd {
+            display: flex;
+        }
+    }
+
+    ul{
+        list-style: none;
+        padding: 1.5em;
+  
+    }
+
+    button {
+        font-weight: bold;
+
+    }
+}

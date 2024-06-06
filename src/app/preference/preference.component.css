@@ -1,0 +1,35 @@
+div.preference {
+  font-family: 'Asap', Arial, Helvetica, sans-serif;
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 2em;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 1em;
+}
+div.preference .type {
+  margin-bottom: 1.5em;
+  font-weight: bold;
+}
+div.preference ul {
+  list-style: none;
+  padding-left: 0;
+}
+div.preference ul li {
+  background: rgba(255, 255, 255, 0.5);
+  padding: 0.5em 1em;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+div.preference button {
+  margin-left: 1em;
+  font-weight: bold;
+}/*# sourceMappingURL=preference.component.css.map */

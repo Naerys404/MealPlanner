@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+
+section.home {
+    background-image: url('./assets/images/pexels-karolina-grabowska-4032970.jpg');
+    background-size: cover;
+    background-position: center;
+
+}
+
+li.ingredient {
+    background-color: #FAFAFA;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 15em;
+    margin: 0.5em auto;
+    padding: 0.5em 0.5em 0.1em 0.5em;
+    font-weight: 400;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    font-size: large;
+    border-bottom-width: 1px; 
+    border-bottom-style: solid;
+    border-bottom-right-radius: 225px 15px;
+    border-bottom-left-radius:0px 225px;
+    
+
+    button {margin-left: 1em; font-family: 'Caveat', serif; font-weight:700; color:#C54866; font-size: 1em;} 
+}

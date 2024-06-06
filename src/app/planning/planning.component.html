@@ -1,0 +1,66 @@
+<div class="planning">
+
+    @if(menus.length > 0 ){
+       @for(menu of menus; track menu.day; let index = $index){
+        <div class="dayWrap">
+           
+            <div class="day" id="day-{{index}}">
+                <div class="upper handwrite thick"><strong>{{menu.day}}</strong></div>
+                <div class="meals">
+                    <div class="lunch">
+                        <div class="time">Déjeuner</div>
+                        <div class="d-flex justify-content-center align-items-center">
+                            @for(ingredient of menu.lunch; track ingredient; let ingredientIndex = $index){  
+                                @if(ingredientIndex <=1){
+                                    <div class="ingredient" id="ingredient-{{ingredientIndex}}"><p>{{ingredient}}</p></div> <strong>+</strong> 
+                                 } @else {
+                                     <div class="ingredient" id="ingredient-{{ingredientIndex}}"><p>{{ingredient}}</p></div>
+                                 }
+                            }
+                        </div> 
+                    </div>
+                    <div class="dinner">
+                        <div class="time">Dîner</div>
+                        <div class="d-flex justify-content-center align-items-center">
+                            @for(ingredient of menu.dinner; track ingredient; let ingredientIndex = $index){
+                                @if(ingredientIndex <=1){
+                                   <div class="ingredient" id="ingredient-{{ingredientIndex}}"><p>{{ingredient}}</p></div> <strong>+</strong> 
+                                } @else {
+                                    <div class="ingredient" id="ingredient-{{ingredientIndex}}"><p>{{ingredient}}</p></div>
+                                }
+                                
+
+                            } 
+                        </div>    
+                    </div>
+                </div>
+           
+            </div>
+        </div>
+        } 
+        
+
+    } @else {
+        
+        @for(day of week; track day; let index = $index){
+            <div class="dayWrap">
+            <div class="day" id="day-{{index}}">
+
+                <div class="upper handwrite thick"><strong>{{day}}</strong></div>
+                <div class="lunch">
+                    <div class="time">Déjeuner <span class=""></span></div>
+                </div>
+                <div class="dinner">
+                     <div class="time">Dîner</div>
+                </div>    
+
+           </div>
+        </div>
+        }   
+        
+    }
+  
+        
+    
+    
+</div>

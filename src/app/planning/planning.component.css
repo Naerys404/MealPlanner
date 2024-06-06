@@ -1,0 +1,47 @@
+.planning {
+  background: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 1em;
+}
+.planning svg {
+  margin: 0 1em;
+}
+.planning .dayWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.planning ul {
+  list-style: none;
+}
+.planning ul .day {
+  font-weight: bold;
+}
+.planning .timeWrap {
+  display: flex;
+  justify-content: space-between;
+}
+.planning .timeWrap .meal, .planning .timeWrap .time {
+  margin: 1em 1em 1em 3em;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.planning .timeWrap .meal {
+  border-radius: 4px;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 1em;
+}
+.planning .timeWrap .meal:empty {
+  width: 20em;
+  height: 3.5em;
+}/*# sourceMappingURL=planning.component.css.map */

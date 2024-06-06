@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+section {
+  font-family: "Montserrat", sans-serif;
+  background-image: linear-gradient(-225deg, #FFE29F 0%, #FFA99F 48%, #FF719A 100%);
+  height: 100vh;
+  padding: 2em;
+}
+
+section h1 {
+  margin-bottom: 1em;
+}
+
+section h2 {
+  text-align: center;
+}
+
