@@ -1,5 +1,5 @@
-import { Component, Input, Output } from '@angular/core';
-import { Menu, TypeOfFood } from '../model/food';
+import { Component, Input} from '@angular/core';
+import { Menu } from '../model/food';
 import { AppComponent } from '../app.component';
 import { PlanningComponent } from '../planning/planning.component';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
@@ -10,12 +10,14 @@ import { MenusService } from '../services/menus.service';
 import { faBurger, faCarrot, faWheatAwn, faFishFins, faBowlFood } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { IngredientFormComponent } from '../ingredient-form/ingredient-form.component';
+import { NgbCollapse } from '@ng-bootstrap/ng-bootstrap';
+
 
 
 @Component({
   selector: 'app-preference',
   standalone: true,
-  imports: [AppComponent, PlanningComponent, ReactiveFormsModule, FontAwesomeModule, IngredientFormComponent],
+  imports: [AppComponent, PlanningComponent, ReactiveFormsModule, FontAwesomeModule, IngredientFormComponent, NgbCollapse],
   templateUrl: './preference.component.html',
   styleUrl: './preference.component.scss'
 })
@@ -27,7 +29,10 @@ export class PreferenceComponent {
   categories:any[] = [];
   week = WEEK
 
+  isCollapsed: boolean = false; 
+
   ngOnInit(): void {
+   
     this.ingredientService.getIngredients().subscribe(data => {
       this.ingredients = data;
     });
@@ -35,8 +40,10 @@ export class PreferenceComponent {
     this.categoriesService.getCategories().subscribe(data => {
       this.categories = data;
     })
-
+    
   }
+
+
 
   foodName = new FormControl();
 
@@ -48,11 +55,10 @@ export class PreferenceComponent {
   randomFoods:any = [];
 
 
-  //variable! signifie que la variable ne sera pas initialisée immediatement
   @Input()
   menus!: Menu[];
   
-  // retourne l'icone appropriée pour chaqe catégorie
+  // retourne l'icone appropriée pour chaqee catégorie
   getIconForCategory(name:string){
     switch(name){
       case 'Légumes':
@@ -84,7 +90,6 @@ export class PreferenceComponent {
       document.getElementById(`ingredient-${id}`)?.remove();
   }
 
- 
 
   generate():void{
     
@@ -100,8 +105,8 @@ export class PreferenceComponent {
        
       }
       //update des data via menuservice
-      this.menusService.updateMenus(this.meals)
- 
+      this.menusService.updateMenus(this.meals);
+
     }
 
     //selection d'un ingredient au hasard
@@ -128,14 +133,11 @@ export class PreferenceComponent {
       //pour chaque catégorie
     categories.forEach(category => {
         
-      let cat = category.querySelector('.catName');
-      // console.log(cat)
-
           
-      //nodes contenant chacun une liste d'ingrédients
-      let ingredientsByCat = category.querySelectorAll('.ingredient');
+    //nodes contenant chacun une liste d'ingrédients
+    let ingredientsByCat = category.querySelectorAll('.ingredient');
           
-      const randomIngredient = this.getRandomIngredient(ingredientsByCat);
+    const randomIngredient = this.getRandomIngredient(ingredientsByCat);
 
       if(randomIngredient) {
         let ingredient = randomIngredient.firstChild
@@ -145,15 +147,10 @@ export class PreferenceComponent {
         this.randomFoods.push(ingredientName);
           
       }
-
-
     })
 
     return this.randomFoods;
-   
   }
-  
-
   
 
 }  

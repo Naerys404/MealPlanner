@@ -1,7 +1,5 @@
-<section class="home">
-
-    <div id="preferenceSide">
-       <div class="brand">
+<section id="main" class="container-fluid"> 
+    <section class="brand">
         <div class="logo">
            <img src="/assets/images/Meal_planner.png" alt="logo" class="img-fluid"> 
         </div>
@@ -9,16 +7,16 @@
             <h1>Meal Planner</h1>
             <h2>Votre menu de la semaine en un seul clic</h2>  
         </div>
-     
+    </section>
+    <div class="row wrap">
+        <aside id="preferenceSide" class="col-md-4">
+            <app-preference></app-preference>
+        </aside>
+        
+        <section id="planningSide" class="col-md-8">   
+            <app-planning></app-planning> 
+        </section>
     </div>
-   
-        <app-preference></app-preference> 
-    </div>
-    
-    <div id="planningSide">   
-        <app-planning ></app-planning> 
-    </div>
-   
 
 
 </section>

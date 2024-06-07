@@ -1,4 +1,13 @@
-<div class="preference">
+
+<div class="preference" #collapse="ngbCollapse" id="collapseSidebar" #c="ngbCollapse" [(ngbCollapse)]="isCollapsed" [horizontal]='true'>
+<div class="buttonCollapse">
+  <button class="postIt shadowEffect" type="button" (click)="collapse.toggle()"
+    [attr.aria-expanded]="!isCollapsed"
+  aria-controls="collapseSidebar" aria-controls="collapseSidebar">
+    <div class="circle"></div>
+  </button>  
+</div>
+
   <div class="generator">
     <div class="sticker"></div>
     <button type="button" class="handwrite thick" (click)="generate()">
@@ -22,7 +31,7 @@
             <div class="accordion_item">
                 <ul id="{{category.name}}">
                   <app-ingredient-form [category]="category.name"></app-ingredient-form>
-                    @for(ingredient of category.ingredients; track ingredient.name; let index = $index){
+                    @for(ingredient of category.ingredients; track ingredient.id; let index = $index){
                         
                     <li class="ingredient" id="ingredient-{{ingredient.id}}">{{ingredient.name}}<button type="button" class="btn btn-sm" (click)="deleteIngredient(ingredient.id)">X</button></li> 
                         
@@ -34,8 +43,5 @@
         </div>
       </div>
     }
-  
 
-    
-</div>
-    
+  <div>

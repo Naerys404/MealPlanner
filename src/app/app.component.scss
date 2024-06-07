@@ -1,29 +1,35 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&display=swap');
 
-html, body {background-color: #fafafa; margin: 0; padding: 0;}
-
-#visual {position: fixed; bottom:0; z-index: -1;}
-
-section.home {
+section#main {
   display: flex;
   position: relative;
+  flex-direction: column;
+  background-image: url('/assets/images/blob-scene-haikei.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
   min-height: 100vh;
+  overflow-x: hidden;
 
   #preferenceSide {
-    background-color: rgba(250,250,250,0.95);
+    padding: 0;
   }
 
+  .wrap {min-height: 100vh;}
 
     .brand {
       margin:0 2em;
       padding: 2em;
       display: flex;
+      position: absolute;
+      top:0;
+      left:0;
+      z-index: 1;
+
 
       .logo {
         aspect-ratio: 1;
         max-height: 10em;
+        min-height: 6em;
       } 
       .brandTitles { 
         color: #568306;

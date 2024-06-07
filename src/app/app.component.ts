@@ -4,8 +4,7 @@ import { RouterOutlet } from '@angular/router';
 import { PlanningComponent } from './planning/planning.component';
 import { PreferenceComponent } from './preference/preference.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-
-
+import { NgbCollapse } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -16,7 +15,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
       RouterOutlet,
       PlanningComponent,
       PreferenceComponent, 
-      FontAwesomeModule
+      FontAwesomeModule,
+      NgbCollapse
     ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
@@ -24,14 +24,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 export class AppComponent {
 
+
   title = 'Meal Planner - Votre menu de la semaine en un seul clic';
 
 
-// Créer un tableau pour stocker les aliments aléatoires sélectionnés
 
-  // randomFoods:any = [];
 
-  // menus!: Menu[];
 
 }
 

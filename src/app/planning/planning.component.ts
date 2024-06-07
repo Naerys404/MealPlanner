@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { TIMESHEET, WEEK } from '../../db-data';
 import { PreferenceComponent } from '../preference/preference.component';
 import { AppComponent } from '../app.component';
@@ -18,18 +18,18 @@ import { MenusService } from '../services/menus.service';
 export class PlanningComponent{
   
   constructor(private menusService:MenusService){
-    this.menusService.menus$.subscribe((menus) =>{
+    this.menusService.menus.subscribe((menus) =>{
       this.menus = menus
     });
+
   }
+
 
 
   title = 'Planning' 
   week = WEEK
   timesheet = TIMESHEET 
   menus: Menu[] = [];
-  
-
 
 
 }

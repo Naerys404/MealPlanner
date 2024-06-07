@@ -4,13 +4,16 @@
 @import 'bootstrap/scss/bootstrap';
 
 @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Asap:ital,wght@0,100..900;1,100..900&display=swap');
 
-section.home {
-    background-image: url('./assets/images/pexels-karolina-grabowska-4032970.jpg');
-    background-size: cover;
-    background-position: center;
 
-}
+:root {
+    width: 100%;
+    min-height: 100vh ;
+    padding: 0; 
+    overflow: hidden !important; 
+  }
 
 li.ingredient {
     background-color: #FAFAFA;
@@ -33,3 +36,74 @@ li.ingredient {
 
     button {margin-left: 1em; font-family: 'Caveat', serif; font-weight:700; color:#C54866; font-size: 1em;} 
 }
+
+.buttonCollapse {
+  
+ 
+  position: absolute;
+  z-index: 1;
+  right:-3em;
+  top:1em;width: 7em;
+ 
+  //test
+  .postIt{
+    display: block; 
+    width: 100%; 
+    border: none;
+    height: 50px;
+    border-radius: 5px;
+    background: linear-gradient(to right, #568306 0%, #568306 100%);
+    margin-bottom: 40px;
+    padding: 15px 25px 0 40px;
+    color: darkslategray;
+    box-shadow: 1px 2px 1px -1px #777;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+
+    &:hover {
+      background: linear-gradient(to right,#568306  35%, #abbd73 100%);
+    }
+
+  &.shadowEffect {
+
+    &:before {
+      z-index: -2;
+      position: absolute;
+      content: "";
+      bottom: 20px;
+      right: 0;
+      width: 45%;
+      top: 0;
+      box-shadow: 0 15px 10px #777;
+      transform: rotate(0deg);
+      transition: all 150ms ease-in-out;
+    }
+
+    &:hover::before {
+      transform: rotate(4deg);
+      bottom: 13px;
+      z-index: -10;
+    }
+  }
+  }
+}
+
+
+ 
+.circle {
+  position: absolute;
+  top: 14px;
+  left: 15px;
+  border-radius: 50%;
+  box-shadow: inset 1px 1px 1px 0px rgba( 0, 0, 0, .5), inset 0 0 0 25px #fafafa;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+ 
+  //endtest
+
+@import 'responsive.scss';
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';

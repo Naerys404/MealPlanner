@@ -1,47 +1,135 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 .planning{
     font-family: 'Asap', Arial, Helvetica, sans-serif;
     display: flex;
     flex-wrap: wrap;
-    padding: 2em; 
-    margin: 2em 1em 1em 1em;
-    min-width:50vw;
+    padding: 4em;
+    width: 100%;
+    
+    .blocNote {
+      width: 100%;
+      padding: 4em 4em 9em 4em;
+      margin: 2em 2em 0 2em;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+      background-color: rgba(#fafafa, 0.95);
+      transition: all 0.3s ease-in-out;
+      
+      .table {display: table; border-collapse: separate;border-spacing: 0;
+      
+          & th:first-child, & td:first-child {width: 6em;}
+          & th:last-child , & td:last-child {
+            border-bottom-right-radius: 225px 15px;
+            border-bottom-left-radius:0px 225px;
+          }
 
-  span.upper {text-transform: uppercase;}
+          td {
+            border-bottom-width: 2.5px; 
+            border-bottom-style: solid;
+            padding: 3em 0 0 0;
+          }
+          th {border-color: transparent;}
 
+          thead, tbody {width: 100%;}
 
-    .dayWrap {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            width: 50%;
-            min-height: 10em;
-            color:  #2C323E;
-            position: relative;
-            
+          td, th, tr {background-color: transparent; vertical-align: middle;}
+
+         .lunchWord, .dinnerWord {
            
-                .day{
-                    background-color: rgba(#fafafa, 0.98);
-                    padding: 20px;
-                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                    transition: all 0.3s ease;
-                    padding:2em;
-                    margin: 1em;  
-                    width: 90%;
-                    // clip-path: polygon(8% 0, 80% 0%, 100% 0, 100% 80%, 93% 100%, 0 100%, 0% 80%, 0% 20%);
-                    // position: relative;
+            font-weight: bold;
+            font-size: 1.2em;
+      
+            div {
+              width: 10em;  
+              padding: 1em;
+              border-radius: 5px;
+              background-color: #568306;      
+              color: #fafafa;      
+              box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+              margin: 0.5em auto; 
+              clip-path: polygon(0 0, 100% 0, 100% 0, 100% 100%, 0 100%);
+              transition: clip-path 0.8s ease;
+              position: relative; 
+              
+            
+              &:hover { 
+                clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
+           
+                &::after {
+                  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); 
+                  width:20px;
+                  height:20px;
   
-                  }
+                }  
+              }
+            
+              &::after {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 0;
+                height: 0;
+                background-color: #e1e1f2;
+                top: 0;
+                right: 0;
+                border-bottom-left-radius: 5px;
+                clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+                transition: width 0.8s ease, height 0.8s ease, clip-path 0.3s ease-in-out;
+                z-index: 2;                
                 
-                  .upper {
-                    text-transform: uppercase;
-                    display: inline-flex;
-                  }
+              }
+            
+            }
+              
+            }
+             
+          
 
-                  .handwrite{
+         .lunchWord div {transform: rotate(-1deg);}
+         .dinnerWord div {transform: rotate(2deg);}
+       
+      }
+
+    }
+    .tape {
+      position: relative;
+      text-align: center;
+      display: inline-block;
+      margin: 20px auto 10px;
+      
+      &:before,
+      &:after {
+        background: rgba(245, 245, 233, 0.6);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+        content: "";
+        display: block;
+        height: 4em;
+        position: absolute;
+        margin: auto;
+        width: 12em;
+      }    
+        &:before {
+        left: -3em;
+        top: 0em;
+        transform: rotate(-45deg);
+      }
+    
+      &:after {
+        bottom: 1em;
+        right: -3em;
+        transform: rotate(-35deg);
+      }
+    }
+    
+  span.upper {text-transform: uppercase;}
+                
+    .upper {
+      text-transform: uppercase;
+      background-color: rgba(#fafafa, $alpha: 0.7);
+      border-color: transparent;
+    }
+
+    .handwrite{
                     align-self:center;
-                    background:transparent;
                     padding:0.5rem 1.5rem;
                     margin:0;
                     transition:all .5s ease;
@@ -58,25 +146,20 @@
                     }
 
                     &.thin {
-                      border-width: 2px;
+                      border-width: 3px;
                     }
                   
                      &:hover{
                        box-shadow: 20px 38px 34px -26px hsla(0,0%,0%,.2);
                     } 
                   
-                 
                   }
-                  
-                  .day:hover {
-                    transform: translateY(-5px);
-                    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-                  }
-                
+     
                 
                 .time {
-                    font-weight: bold;
-                    margin-right: 2em;
+                    width: 2.5em;
+                    height: 2.5em;
+                    margin-right: 1em;
                     padding: 0;
                   
                 }
@@ -104,50 +187,69 @@
               .handwrite, .lunch, .dinner{ border-color: #826056 !important; } 
             }
 
-            //#CDB226, #C54866, #8298CA, #2C323E, #BABC71, #94744A, #FEFEFC, #BD945B, #FFBE98
 
-           
                 
-            .lunch, .dinner {
-                padding:0 1em;
-                margin: 1.5em 1.5em 1.5em 0;
-                min-height: 3em;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                border-bottom-width: 2px; 
-                border-bottom-style: solid;
-                border-bottom-right-radius: 225px 15px;
-                border-bottom-left-radius:0px 225px;
-                // background-color: rgba(#fafafa, 0.9); 
-                // border-radius: 4px;
-                
-
+            .mealTimesheets {
+              width: 50%;
+              &>*{
+                opacity: 0;
+              }
+               
                 .ingredient {
                 
-                    margin-right: 1em;
                     text-transform: capitalize;
-                    padding: 0.5em 2em;
-                    // border-top-left-radius: 100px;
-                    // border-bottom-right-radius: 100px;
-                    border-radius: 5px;
+                    
 
                     & p { 
                       margin-bottom: 0;                    
                     }
 
-                    // & p.appear {
-
-                    // } 
-                  
+                   
                 }
 
-               
             }
              
+            .animate {
+              &>*{
+                -webkit-animation: text-focus-in 0.4s cubic-bezier(0.550, 0.085, 0.680, 0.530) both 0.2s;
+                animation: text-focus-in 0.4s cubic-bezier(0.550, 0.085, 0.680, 0.530) both 0.2s;
+              }
             
+                      
+            }
         }
+
+
+@-webkit-keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+@keyframes text-focus-in {
+  0% {
+    -webkit-filter: blur(10px);
+            filter: blur(10px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-filter: blur(0px);
+            filter: blur(0px);
+    opacity: 1;
+  }
+}
+
+      
+
+
+
 
  
 
-}
+
