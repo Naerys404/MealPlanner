@@ -1,19 +1,18 @@
-# Meal Planner
-## Version 
-Project : version 1.0
-Angular version 17.0.10.
+# :fork_and_knife: Meal Planner
+## :pushpin: Version 
 
-## Description
+Angular version 17.0.10. <br><br>
+:hammer_and_wrench: Projet en cours 
 
-Organisateur de menus aléatoires pour la semaine
+## :information_source: Description
 
-Basé sur une API Symfony
-
-Génération aléatoire asynchrone via manipulation du DOM pour personnaliser les aliments à intégrer ou supprimer de la liste
-
+:heavy_check_mark: Organisateur de menus aléatoires pour la semaine <br>
+:heavy_check_mark: Basé sur une API Symfony <br>
+:heavy_check_mark: Génération aléatoire asynchrone via manipulation du DOM pour personnaliser les aliments à intégrer ou supprimer de la liste <br>
 
 
-## Developper 
+
+## :keyboard: Developper 
 Laura Gaupin
 
 
