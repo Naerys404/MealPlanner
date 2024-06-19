@@ -15,5 +15,9 @@ Angular version 17.0.10. <br><br>
 ## :keyboard: Developper 
 Laura Gaupin
 
+## :balance_scale: Licence
+Licence: GNU General Public License V3 or later
+Licence URI : https://www.gnu.org/licenses/gpl-3.0.html
+
 
 
