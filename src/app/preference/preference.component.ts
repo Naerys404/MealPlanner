@@ -5,7 +5,7 @@ import { PlanningComponent } from '../planning/planning.component';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { IngredientService } from '../services/ingredient.service';
 import { CategoriesService } from '../services/categories.service';
-import { WEEK} from '../../db-data';
+import { WEEK } from '../../db-data';
 import { MenusService } from '../services/menus.service';
 import { faBurger, faCarrot, faWheatAwn, faFishFins, faBowlFood } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -25,25 +25,30 @@ export class PreferenceComponent {
 
   constructor(private ingredientService:IngredientService, private categoriesService:CategoriesService, private menusService:MenusService){}
 
-  ingredients:any[] = [];
+
   categories:any[] = [];
+  ingredients:any[] = [];
   week = WEEK
 
   isCollapsed: boolean = false; 
 
   ngOnInit(): void {
-   
+
     this.ingredientService.getIngredients().subscribe(data => {
       this.ingredients = data;
     });
-    
+
     this.categoriesService.getCategories().subscribe(data => {
       this.categories = data;
+      console.log("données reçues:", this.categories)
+      this.categories.forEach(category => {
+        console.log('cat:', category.name)
+        console.log('ingre', category.ingredients)
+        
+      })
     })
-    
+      
   }
-
-
 
   foodName = new FormControl();
 
