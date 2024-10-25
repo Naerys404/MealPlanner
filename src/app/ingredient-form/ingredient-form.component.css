@@ -1,0 +1,20 @@
+.form {
+  display: flex;
+  margin-bottom: 2em;
+}
+.form .btn {
+  display: inline-block;
+  background-color: #568306;
+  border: none;
+  border-radius: 10px;
+  color: #ffffff;
+  text-align: center;
+  padding: 0.5em 1em;
+  margin-left: 1em;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.form .btn:hover {
+  background-color: #7bad42;
+}/*# sourceMappingURL=ingredient-form.component.css.map */

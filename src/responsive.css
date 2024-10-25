@@ -1,0 +1,29 @@
+@charset "UTF-8";
+/* Très petits écrans, téléphones mobiles (moins de 600px) */
+@media only screen and (max-width: 600px) {
+  /* Styles */
+}
+/* Petits écrans, téléphones mobiles (plus de 600px) */
+@media only screen and (min-width: 601px) {
+  /* Styles */
+}
+/* Petites tablettes (plus de 768px) */
+@media only screen and (min-width: 768px) {
+  /* Styles */
+}
+/* Grandes tablettes (plus de 1024px) */
+@media only screen and (min-width: 1024px) {
+  /* Styles */
+}
+/* Petits écrans d'ordinateur (plus de 1280px) */
+@media only screen and (min-width: 1280px) {
+  /* Styles */
+}
+/* Grands écrans d'ordinateur (plus de 1440px) */
+@media only screen and (min-width: 1440px) {
+  /* Styles */
+}
+/* Très grands écrans (plus de 1920px) */
+@media only screen and (min-width: 1920px) {
+  /* Styles */
+}/*# sourceMappingURL=responsive.css.map */

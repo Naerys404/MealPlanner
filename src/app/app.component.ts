@@ -28,9 +28,6 @@ export class AppComponent {
   title = 'Meal Planner - Votre menu de la semaine en un seul clic';
 
 
-
-
-
 }
 
 

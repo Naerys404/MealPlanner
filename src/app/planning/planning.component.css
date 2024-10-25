@@ -1,47 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 .planning {
-  background: rgba(255, 255, 255, 0.5);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  padding: 2em;
+  font-family: "Asap", Arial, Helvetica, sans-serif;
   display: flex;
-  align-items: center;
-  justify-content: space-around;
   flex-wrap: wrap;
-  margin: 1em;
+  padding: 4em;
+  width: 100%;
 }
-.planning svg {
-  margin: 0 1em;
+.planning .blocNote {
+  width: 100%;
+  padding: 4em 4em 9em 4em;
+  margin: 2em 2em 0 2em;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  background-color: rgba(250, 250, 250, 0.95);
+  transition: all 0.3s ease-in-out;
 }
-.planning .dayWrap {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+.planning .blocNote .table {
+  display: table;
+  border-collapse: separate;
+  border-spacing: 0;
 }
-.planning ul {
-  list-style: none;
+.planning .blocNote .table th:first-child, .planning .blocNote .table td:first-child {
+  width: 6em;
 }
-.planning ul .day {
+.planning .blocNote .table th:last-child, .planning .blocNote .table td:last-child {
+  border-bottom-right-radius: 225px 15px;
+  border-bottom-left-radius: 0px 225px;
+}
+.planning .blocNote .table td {
+  border-bottom-width: 2.5px;
+  border-bottom-style: solid;
+  padding: 3em 0 0 0;
+}
+.planning .blocNote .table th {
+  border-color: transparent;
+}
+.planning .blocNote .table thead, .planning .blocNote .table tbody {
+  width: 100%;
+}
+.planning .blocNote .table td, .planning .blocNote .table th, .planning .blocNote .table tr {
+  background-color: transparent;
+  vertical-align: middle;
+}
+.planning .blocNote .table .lunchWord, .planning .blocNote .table .dinnerWord {
   font-weight: bold;
+  font-size: 1.2em;
 }
-.planning .timeWrap {
-  display: flex;
-  justify-content: space-between;
-}
-.planning .timeWrap .meal, .planning .timeWrap .time {
-  margin: 1em 1em 1em 3em;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-}
-.planning .timeWrap .meal {
-  border-radius: 4px;
-  background-color: rgba(255, 255, 255, 0.5);
+.planning .blocNote .table .lunchWord div, .planning .blocNote .table .dinnerWord div {
+  width: 10em;
   padding: 1em;
+  border-radius: 5px;
+  background-color: #568306;
+  color: #fafafa;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  margin: 0.5em auto;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 0, 100% 100%, 0 100%);
+  transition: -webkit-clip-path 0.8s ease;
+  transition: clip-path 0.8s ease;
+  transition: clip-path 0.8s ease, -webkit-clip-path 0.8s ease;
+  position: relative;
 }
-.planning .timeWrap .meal:empty {
-  width: 20em;
-  height: 3.5em;
+.planning .blocNote .table .lunchWord div:hover, .planning .blocNote .table .dinnerWord div:hover {
+  -webkit-clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, calc(100% - 20px) 0, 100% 20px, 100% 100%, 0 100%);
+}
+.planning .blocNote .table .lunchWord div:hover::after, .planning .blocNote .table .dinnerWord div:hover::after {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  width: 20px;
+  height: 20px;
+}
+.planning .blocNote .table .lunchWord div::after, .planning .blocNote .table .dinnerWord div::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  background-color: #e1e1f2;
+  top: 0;
+  right: 0;
+  border-bottom-left-radius: 5px;
+  -webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+          clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  transition: width 0.8s ease, height 0.8s ease, -webkit-clip-path 0.3s ease-in-out;
+  transition: width 0.8s ease, height 0.8s ease, clip-path 0.3s ease-in-out;
+  transition: width 0.8s ease, height 0.8s ease, clip-path 0.3s ease-in-out, -webkit-clip-path 0.3s ease-in-out;
+  z-index: 2;
+}
+.planning .blocNote .table .lunchWord div {
+  transform: rotate(-1deg);
+}
+.planning .blocNote .table .dinnerWord div {
+  transform: rotate(2deg);
+}
+.planning .tape {
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  margin: 20px auto 10px;
+}
+.planning .tape:before, .planning .tape:after {
+  background: rgba(245, 245, 233, 0.6);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  content: "";
+  display: block;
+  height: 4em;
+  position: absolute;
+  margin: auto;
+  width: 12em;
+}
+.planning .tape:before {
+  left: -3em;
+  top: 0em;
+  transform: rotate(-45deg);
+}
+.planning .tape:after {
+  bottom: 1em;
+  right: -3em;
+  transform: rotate(-35deg);
+}
+.planning span.upper {
+  text-transform: uppercase;
+}
+.planning .upper {
+  text-transform: uppercase;
+  background-color: rgba(250, 250, 250, 0.7);
+  border-color: transparent;
+}
+.planning .handwrite {
+  align-self: center;
+  padding: 0.5rem 1.5rem;
+  margin: 0;
+  transition: all 0.5s ease;
+  color: #41403E;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  outline: none;
+  box-shadow: 2px 8px 4px -6px hsla(0, 0%, 0%, 0.3);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+  border-style: solid;
+}
+.planning .handwrite.thick {
+  border-width: 5px;
+}
+.planning .handwrite.thin {
+  border-width: 3px;
+}
+.planning .handwrite:hover {
+  box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, 0.2);
+}
+.planning .time {
+  width: 2.5em;
+  height: 2.5em;
+  margin-right: 1em;
+  padding: 0;
+}
+.planning #day-0 .handwrite, .planning #day-0 .lunch, .planning #day-0 .dinner {
+  border-color: #8298CA !important;
+}
+.planning #day-1 .handwrite, .planning #day-1 .lunch, .planning #day-1 .dinner {
+  border-color: #BABC70 !important;
+}
+.planning #day-2 .handwrite, .planning #day-2 .lunch, .planning #day-2 .dinner {
+  border-color: #C54866 !important;
+}
+.planning #day-3 .handwrite, .planning #day-3 .lunch, .planning #day-3 .dinner {
+  border-color: #FFBE98 !important;
+}
+.planning #day-4 .handwrite, .planning #day-4 .lunch, .planning #day-4 .dinner {
+  border-color: #2C323E !important;
+}
+.planning #day-5 .handwrite, .planning #day-5 .lunch, .planning #day-5 .dinner {
+  border-color: #ccb911 !important;
+}
+.planning #day-6 .handwrite, .planning #day-6 .lunch, .planning #day-6 .dinner {
+  border-color: #826056 !important;
+}
+.planning .mealTimesheets {
+  width: 50%;
+}
+.planning .mealTimesheets > * {
+  opacity: 0;
+}
+.planning .mealTimesheets .ingredient {
+  text-transform: capitalize;
+}
+.planning .mealTimesheets .ingredient p {
+  margin-bottom: 0;
+}
+.planning .animate > * {
+  animation: text-focus-in 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53) both 0.2s;
+}
+@keyframes text-focus-in {
+  0% {
+    filter: blur(10px);
+    opacity: 0;
+  }
+  100% {
+    filter: blur(0px);
+    opacity: 1;
+  }
 }/*# sourceMappingURL=planning.component.css.map */
